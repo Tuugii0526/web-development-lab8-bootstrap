@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="mn" data-bs-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Намжилдорж Төгөлдөрийн хувийн хуудас — Bootstrap 5 хувилбар (Лаб 8)." />
+  <title>tuguldurn@lab8:~$ bootstrap</title>
+  <!-- Apply the saved theme before first paint (no flash). -->
+  <script>
+    document.documentElement.setAttribute('data-bs-theme', localStorage.getItem('theme') || 'dark');
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Task 1: navbar -->
+  <nav class="navbar navbar-expand-lg border-bottom sticky-top bg-body" aria-label="Хуудасны цэс">
+    <div class="container-xl">
+      <a class="navbar-brand font-monospace" href="#about"><kbd>tuguldurn@lab8:~$</kbd> whoami</a>
+      <div class="d-flex align-items-center gap-2 order-lg-last">
+        <!-- Task 3: dark mode button -->
+        <button id="theme-toggle" class="btn btn-outline-secondary btn-sm" type="button"
+          aria-label="Өнгөний горим солих">🌙</button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+          aria-controls="menu" aria-expanded="false" aria-label="Цэс нээх">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse justify-content-lg-end" id="menu">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#about">~/about</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">~/skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#favorites">~/favorites</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">~/faq</a></li>
+          <li class="nav-item"><a class="nav-link" href="#media">~/media</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">~/contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-xl py-4">
+    <div class="row g-4">
+      <main class="col-lg-8 d-grid gap-4">
+        <section id="about" class="card p-4">
+          <h1 class="h3">Сайн уу 👋</h1>
+          <p class="mb-0">
+            Намайг <strong>Намжилдорж Төгөлдөр</strong> гэдэг. Мэдээллийн технологийн сургуульд
+            <mark class="rounded">3-р курст</mark> сурдаг. Шинэ зүйл суралцах, бусдад сурсан мэдсэнээ
+            хуваалцах дуртай 😇. Танилцахад таатай байна. ✨
+          </p>
+        </section>
+
+        <!-- Task 1: 3-column card grid -->
+        <section id="skills" class="card p-4">
+          <h2 class="h5 mb-3">🧰 Юу мэддэг вэ?</h2>
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+            <div class="col">
+              <article class="card h-100 bg-body-tertiary">
+                <div class="card-body d-grid gap-2">
+                  <h3 class="card-title h6 mb-0"><kbd>./html_css</kbd></h3>
+                  <p class="card-text">Вэб хуудасны бүтэц, загварыг хийхэд ашигладаг.</p>
+                  <div class="progress" role="progressbar" aria-label="HTML/CSS" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="height: 6px">
+                    <div class="progress-bar bg-brand" style="width: 60%"></div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col">
+              <article class="card h-100 bg-body-tertiary">
+                <div class="card-body d-grid gap-2">
+                  <h3 class="card-title h6 mb-0"><kbd>./git_github</kbd></h3>
+                  <p class="card-text">Кодоо байршуулахад ашигладаг. <mark class="rounded">GitHub Pages</mark> дээр кодоо үнэгүй байршуулдаг.</p>
+                  <div class="progress" role="progressbar" aria-label="Git/GitHub" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="height: 6px">
+                    <div class="progress-bar bg-brand" style="width: 40%"></div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col">
+              <article class="card h-100 bg-body-tertiary">
+                <div class="card-body d-grid gap-2">
+                  <h3 class="card-title h6 mb-0"><kbd>./cpp</kbd></h3>
+                  <p class="card-text">Програмчлалын бодлого бодох дуртай. Шинэ бүтэц, алгоритмаар асуудал шийдэх нь сонирхолтой.</p>
+                  <div class="progress" role="progressbar" aria-label="C++" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="height: 6px">
+                    <div class="progress-bar bg-brand" style="width: 30%"></div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="favorites" class="card p-4">
+          <h2 class="h5 mb-3">⭐ Дуртай зүйлс</h2>
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+            <div class="col">
+              <article class="card h-100 bg-body-tertiary">
+                <div class="card-body">
+                  <h3 class="card-title h6"><kbd>language/</kbd></h3>
+                  <p class="card-text">Дуртай хэл: <strong>C++</strong></p>
+                </div>
+              </article>
+            </div>
+            <div class="col">
+              <article class="card h-100 bg-body-tertiary">
+                <div class="card-body">
+                  <h3 class="card-title h6"><kbd>frameworks/</kbd></h3>
+                  <p class="card-text">React · Vue · Next.js · Nuxt</p>
+                </div>
+              </article>
+            </div>
+            <div class="col">
+              <article class="card h-100 bg-body-tertiary">
+                <div class="card-body">
+                  <h3 class="card-title h6"><kbd>security/</kbd></h3>
+                  <p class="card-text">CTF тэмцээн</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- Flip cards (the card analysed in task 5) -->
+        <section id="gallery" class="card p-4">
+          <h2 class="h5 mb-3">💬 Асуулт хариулт</h2>
+          <ul class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 list-unstyled mb-0">
+            <li class="col">
+              <article class="flip-card h-100" tabindex="0">
+                <div class="flip-inner">
+                  <h3 class="face face-front card h6 p-3 mb-0"><kbd>?</kbd> Яагаад вэб хөгжүүлэлт сонирхдог вэ?</h3>
+                  <p class="face face-back card p-3 mb-0">Код бичээд хөтөч дээр үр дүнг нь шууд харж болдог нь надад таалагддаг.</p>
+                </div>
+              </article>
+            </li>
+            <li class="col">
+              <article class="flip-card h-100" tabindex="0">
+                <div class="flip-inner">
+                  <h3 class="face face-front card h6 p-3 mb-0"><kbd>?</kbd> Одоо юу сурч байна вэ?</h3>
+                  <p class="face face-back card p-3 mb-0">Япон хэл <strong>dekiru nihongo</strong> номноос сурж байгаа. Ирэх 12 сард N5 шалгалт өгнө.</p>
+                </div>
+              </article>
+            </li>
+            <li class="col">
+              <article class="flip-card h-100" tabindex="0">
+                <div class="flip-inner">
+                  <h3 class="face face-front card h6 p-3 mb-0"><kbd>?</kbd> Ойрын зорилго юу вэ?</h3>
+                  <p class="face face-back card p-3 mb-0">OverTheWire-ийн CTF дасгалуудыг шийдэх зорилготой.</p>
+                </div>
+              </article>
+            </li>
+            <li class="col">
+              <article class="flip-card h-100" tabindex="0">
+                <div class="flip-inner">
+                  <h3 class="face face-front card h6 p-3 mb-0"><kbd>?</kbd> Дуртай програмчлалын хэл?</h3>
+                  <p class="face face-back card p-3 mb-0"><strong>C++</strong> — бодлого бодоход хамгийн их ашигладаг.</p>
+                </div>
+              </article>
+            </li>
+            <li class="col">
+              <article class="flip-card h-100" tabindex="0">
+                <div class="flip-inner">
+                  <h3 class="face face-front card h6 p-3 mb-0"><kbd>?</kbd> Кодоо хаана байршуулдаг вэ?</h3>
+                  <p class="face face-back card p-3 mb-0">Git/GitHub ашиглаж, GitHub Pages дээр үнэгүй байршуулдаг.</p>
+                </div>
+              </article>
+            </li>
+            <li class="col">
+              <article class="flip-card h-100" tabindex="0">
+                <div class="flip-inner">
+                  <h3 class="face face-front card h6 p-3 mb-0"><kbd>?</kbd> Чөлөөт цагаараа юу хийдэг вэ?</h3>
+                  <p class="face face-back card p-3 mb-0">CTF тэмцээнд оролцож, шинэ технологи судалдаг.</p>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </section>
+
+        <section id="media" class="card p-4">
+          <h2 class="h5 mb-3">🎬 Youtube хаяг</h2>
+          <figure class="mb-0 mx-auto w-100" style="max-width: 315px">
+            <div class="ratio rounded overflow-hidden" style="--bs-aspect-ratio: 177.78%">
+              <iframe title="Надад таалагдсан видео (YouTube Shorts)" loading="lazy"
+                src="https://www.youtube-nocookie.com/embed/RkWHsgUqphY"
+                allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <figcaption class="figure-caption mt-2">Subscribe хийгээрэй 😊</figcaption>
+          </figure>
+        </section>
+      </main>
+
+      <aside class="col-lg-4 d-grid gap-4 align-content-start">
+        <section id="fortune" class="card p-4">
+          <h2 class="h5"><kbd>$ fortune</kbd></h2>
+          <blockquote class="blockquote border-start border-3 border-brand ps-3 mb-0 fst-italic fs-6">“Оролдлого ихт оройд нь”</blockquote>
+        </section>
+
+        <!-- Task 1: form validation -->
+        <section id="contact" class="card p-4">
+          <h2 class="h5">📬 Холбоо барих</h2>
+          <p><a href="https://github.com/Tuugii0526" target="_blank" rel="noopener">github.com/Tuugii0526</a></p>
+          <form id="contact-form" class="needs-validation d-grid gap-3" novalidate>
+            <div>
+              <label for="name" class="form-label">Нэр</label>
+              <input id="name" name="name" type="text" class="form-control" required minlength="2" />
+              <div class="invalid-feedback">Нэрээ оруулна уу (2+ тэмдэгт).</div>
+            </div>
+            <div>
+              <label for="email" class="form-label">И-мэйл</label>
+              <input id="email" name="email" type="email" class="form-control" required />
+              <div class="invalid-feedback">Зөв и-мэйл хаяг оруулна уу.</div>
+            </div>
+            <div>
+              <label for="msg" class="form-label">Захиа</label>
+              <textarea id="msg" name="msg" rows="3" class="form-control" required minlength="10"></textarea>
+              <div class="invalid-feedback">Захиа 10+ тэмдэгт байх ёстой.</div>
+            </div>
+            <!-- Task 4: .btn-brand -->
+            <button type="submit" class="btn btn-brand fw-bold">Явуулах</button>
+            <div id="form-ok" class="alert alert-success mb-0 d-none" role="status">Баярлалаа! Захиа илгээгдлээ ✅</div>
+          </form>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+  <footer class="border-top">
+    <div class="container-xl py-3 d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <small class="text-body-secondary">© 2026 Намжилдорж Төгөлдөр</small>
+      <a href="#about">↑ дээш гарах</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script>
+    // Task 3: dark mode toggle via data-bs-theme
+    const root = document.documentElement;
+    const toggle = document.getElementById('theme-toggle');
+    const paint = () => { toggle.textContent = root.getAttribute('data-bs-theme') === 'dark' ? '☀️' : '🌙'; };
+    paint();
+    toggle.addEventListener('click', () => {
+      const next = root.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-bs-theme', next);
+      localStorage.setItem('theme', next);
+      paint();
+    });
+
+    // Task 1: Bootstrap form validation
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const ok = form.checkValidity();
+      form.classList.add('was-validated');
+      document.getElementById('form-ok').classList.toggle('d-none', !ok);
+      if (ok) { form.reset(); form.classList.remove('was-validated'); }
+    });
+  </script>
+</body>
+
+</html>
